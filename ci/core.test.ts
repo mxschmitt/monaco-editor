@@ -10,6 +10,8 @@ type BrowserType = "chromium" | "firefox" | "webkit"
 
 const browserType: BrowserType = process.env.BROWSER as BrowserType || "chromium"
 
+mocha.timeout(5 * 1000);
+
 before(async function () {
     this.timeout(5 * 1000);
     console.log(`Starting browser: ${browserType}`)
